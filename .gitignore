@@ -9,6 +9,7 @@ package-lock.json
 
 #keys
 /neardev
+/neardev-b
 
 #cache
 .cache
