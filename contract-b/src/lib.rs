@@ -17,13 +17,13 @@ pub struct ContractB {}
 
 #[near_bindgen]
 impl ContractB {
-    pub fn check_balance(&mut self, contract_a: AccountId, account_id: AccountId) -> Promise {
+    pub fn check_balance(&mut self, contract_a: AccountId, method_name: String, account_id: AccountId) -> Promise {
         let mut amount = 0;
         if account_id == "matt" {
             amount = 1000;
         }
         Promise::new(contract_a).function_call(
-            b"check_balance_callback".to_vec(),
+            method_name.into_bytes(),
             json!({ "amount": amount }).to_string().as_bytes().to_vec(),
             NO_DEPOSIT,
             GAS,

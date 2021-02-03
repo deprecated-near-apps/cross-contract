@@ -20,7 +20,7 @@ impl ContractA {
     pub fn check_balance_contract_b(&mut self, contract_a: AccountId, contract_b: AccountId, account_id: AccountId) -> Promise {
         Promise::new(contract_b).function_call(
             b"check_balance".to_vec(),
-            json!({ "contract_a": contract_a, "account_id": account_id }).to_string().as_bytes().to_vec(),
+            json!({ "contract_a": contract_a, "method_name": "check_balance_callback", "account_id": account_id }).to_string().as_bytes().to_vec(),
             NO_DEPOSIT,
             GAS,
         )
