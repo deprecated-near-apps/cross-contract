@@ -1,4 +1,5 @@
-const contractName = 'dev-1612025955543-8881460';
+const contractName = 'dev-1612324908173-2612551';
+const contractBName = 'dev-1612324901511-8630236';
 
 module.exports = function getConfig(isServer = false) {
 	let config = {
@@ -12,11 +13,11 @@ module.exports = function getConfig(isServer = false) {
 	if (process.env.REACT_APP_ENV !== undefined) {
 		config = {
 			...config,
-			GAS: '200000000000000',
+			contractBName,
+			GAS: '40000000000000',
 			DEFAULT_NEW_ACCOUNT_AMOUNT: '5',
 			contractMethods: {
-				changeMethods: ['new', 'create', 'purchase'],
-				viewMethods: ['get_message'],
+				changeMethods: ['check_balance_contract_b'],
 			},
 		};
 	}

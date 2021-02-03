@@ -5,7 +5,7 @@ const { KeyPair, Account, Contract, utils: { format: { parseNearAmount } } } = n
 const { near, connection, keyStore, contract, contractAccount } = require('./near-utils');
 const getConfig = require('../src/config');
 const {
-	networkId, contractName, contractMethods, DEFAULT_NEW_ACCOUNT_AMOUNT
+	networkId, contractName, contractBName, contractMethods, DEFAULT_NEW_ACCOUNT_AMOUNT
 } = getConfig();
 
 /********************************
@@ -37,7 +37,10 @@ function generateUniqueString(prefix) {
 Exports
 ********************************/
 
-async function initContract() {
+async function initContract(skipNew = false) {
+	if (skipNew) {
+		return { contract, contractName };
+	}
 	try {
 		await contract.new({ owner_id: contractName });
 	} catch (e) {
@@ -108,6 +111,7 @@ module.exports = {
 	getContract,
 	contract,
 	contractName,
+	contractBName,
 	contractMethods,
 	contractAccount,
 	createAccessKeyAccount,
