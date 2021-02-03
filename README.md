@@ -1,12 +1,29 @@
-# Live App Review 1 - App Access Keys
+# Live App Review 4 - Cross Contract Calls
 
 This repo is a companion to this video:
 
 [![Live App Review 1 - App Access Keys](https://img.youtube.com/vi/dT99JLpO2Q8/0.jpg)](https://www.youtube.com/watch?v=dT99JLpO2Q8)
 
+
+
+# Notes about this repo
+
+WARNING WIP!
+
+Only the "app tests" work.
+
+`yarn && yarn test:deploy` should work fine.
+
+To run `test/app.test.js`.
+
+There are no unit tests because cross contract calls don't support them anyway.
 # NEAR App Boilerplate
 
-Most of this repo is how to use React 17 with useContext and useReducer.
+This is a boilerplate repo for experimenting, maybe starting an app based on a topic in NEAR that you want to learn more about.
+
+Most of it just works out of the box by doing `yarn && yarn start`.
+
+Most of this repo (below) is how to use React 17 with useContext and useReducer.
 
 There is a helper in `src/utils/state` that handles a lot of this. You can follow the code as an example or read below to understand how it works.
 
