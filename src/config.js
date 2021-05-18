@@ -1,5 +1,5 @@
-const CONTRACT_NAME = "dev-1612327288811-2721774";
-const CONTRACT_B_NAME = "dev-1612327282548-8486066";
+const contractName = 'dev-1621348560736-85650668300244';
+const contractBName = 'dev-1621348541281-65778297087916';
 
 module.exports = function getConfig(isServer = false) {
   let config = {
@@ -7,13 +7,13 @@ module.exports = function getConfig(isServer = false) {
     nodeUrl: "https://rpc.testnet.near.org",
     walletUrl: "https://wallet.testnet.near.org",
     helperUrl: "https://helper.testnet.near.org",
-    CONTRACT_NAME,
+    contractName,
   };
 
   if (process.env.REACT_APP_ENV !== undefined) {
     config = {
       ...config,
-      CONTRACT_B_NAME,
+      contractBName,
       GAS: "35000000000000",
       DEFAULT_NEW_ACCOUNT_AMOUNT: "5",
       contractMethods: {
@@ -29,7 +29,7 @@ module.exports = function getConfig(isServer = false) {
       nodeUrl: "https://rpc.mainnet.near.org",
       walletUrl: "https://wallet.near.org",
       helperUrl: "https://helper.mainnet.near.org",
-      CONTRACT_NAME: "near",
+      contractName: "near",
     };
   }
 
